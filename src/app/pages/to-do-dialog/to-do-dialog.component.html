@@ -1,0 +1,30 @@
+<div [formGroup]="createDateEvent" id="formCreatingTodoList">
+
+  <mat-dialog-content>
+    This is todo list
+  </mat-dialog-content>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a title</mat-label>
+    <input formControlName="titleInput" matInput placeholder="Please, write title of todolist" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Textarea</mat-label>
+    <textarea matInput formControlName="description" placeholder="Please, enter what need to do"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateTodoList">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="addNewItemTodolist()">Ok</button>
+  </mat-dialog-actions>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="parent">
+
+  <div class="card">
+    <div class="header-card">
+      <h2>Login</h2>
+    </div>
+
+    <div [formGroup]="form" class="content-card">
+      <label for="pseudo">Your Pseudo</label>
+      <input [ngClass]="this.form.controls['login'].invalid && this.form.controls['login'].dirty ? 'error': ''"
+             formControlName="login" matInput type="text" name="pseudo" id="pseudo" placeholder="Enter your Pseudo"/>
+      <div *ngIf="this.form.controls['login'].invalid && this.form.controls['login'].dirty">
+        empty
+      </div>
+      <label for="pass">Your Password</label>
+      <input [ngClass]="this.form.controls['pass'].invalid && this.form.controls['pass'].dirty ? 'error': ''"
+             formControlName="pass" type="password" name="pass" id="pass" placeholder="Enter your password"/>
+
+      <input type="submit" (click)="submitForm()" value="Submit">
+    </div>
+
+    <div class="footer-card">
+      <a href="#">Forgot your password ?</a>
+    </div>
+  </div>
+</div>
