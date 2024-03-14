@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {
   MatDialogActions,
   MatDialogClose,
@@ -40,35 +40,12 @@ export class ToDoDialogComponent {
 
   public addNewItemTodolist() {
     if (this.createDateEvent.valid) {
-      //this.TodoListArrayFromLocalStorage.push(this.createDateEvent.value);
-      // declare const modal: IModal;
-      // const modal: IModal = {
-      //   content: '',
-      //   form: '',
-      //   href: '',
-      //   $form: null,
-      //   $message: null,
-      //   $modal: null,
-      //   $submits: null
-      // };
-      var temp_modal :ITodoItemViewModel = <ITodoItemViewModel>{};
-      temp_modal.description = '';
-      temp_modal.titleInput = '';
-      temp_modal.dateTodoList = new Date();
-
-
-      var second_temp_modal: ITodoItemViewModel = <ITodoItemViewModel>{};
-      second_temp_modal.dateTodoList = <Date>this.createDateEvent.value.dateTodoList;
-      second_temp_modal.titleInput = <string>this.createDateEvent.value.titleInput;
-      second_temp_modal.description = <string>this.createDateEvent.value.description;
-      this.TodoListArrayFromLocalStorage.push(second_temp_modal);
-      // const temp_modal: ITodoItemViewModel = {
-      //   titleInput = '',
-      //   dateTodoList = new Date(),
-      //   description = ''
-      // };
-
-
+      this.TodoListArrayFromLocalStorage.push(<ITodoItemViewModel>
+        {
+          dateTodoList : this.createDateEvent.value.dateTodoList,
+          titleInput : this.createDateEvent.value.titleInput,
+          description : this.createDateEvent.value.description
+        });
       localStorage.setItem(TodoItem.ToDoList, JSON.stringify(this.TodoListArrayFromLocalStorage));
     }
   }

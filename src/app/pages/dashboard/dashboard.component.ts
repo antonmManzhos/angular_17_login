@@ -31,7 +31,7 @@ export class DashboardComponent {
   }
 
   public logout() {
-    if (confirm("lox pidor")) {
+    if (confirm("Are you sure?")) {
       this.router.navigateByUrl('login');
     }
   }

@@ -1,5 +1,5 @@
 export interface ITodoItemViewModel {
-  titleInput: string;
-  description: string;
-  dateTodoList: Date;
+  titleInput: string|null|undefined;
+  description: string|null|undefined;
+  dateTodoList: Date|null|undefined;
 }
