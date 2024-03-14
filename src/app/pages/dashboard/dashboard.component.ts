@@ -44,16 +44,3 @@ export class DashboardComponent {
     });
   }
 }
-
-// @Component({
-//   selector: 'dialog-animations-example-dialog',
-//   templateUrl: 'dialog-animations-example-dialog.html',
-//   standalone: true,
-//   imports: [MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
-//   providers: [provideNativeDateAdapter()],
-// })
-//
-//
-// export class DialogCreatingTodoItem {
-//
-// }
