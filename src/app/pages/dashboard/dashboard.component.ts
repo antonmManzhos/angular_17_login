@@ -10,6 +10,7 @@ import {
 } from "@angular/material/dialog";
 
 import {ToDoDialogComponent} from "../to-do-dialog/to-do-dialog.component";
+import {ToDoDeriveTableComponent} from "../to-do-derive-table/to-do-derive-table.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,8 @@ import {ToDoDialogComponent} from "../to-do-dialog/to-do-dialog.component";
     MatDividerModule,
     MatIconModule,
     RouterModule,
-    MatDialogModule
+    MatDialogModule,
+    ToDoDeriveTableComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'

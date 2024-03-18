@@ -1,0 +1,19 @@
+<table cdk-table [dataSource]="toDoArray">
+  <ng-container cdkColumnDef="dateTodoList">
+    <th style="width: 20%" cdk-header-cell *cdkHeaderCellDef> date Todo List </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.dateTodoList}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="titleInput">
+    <th style="width: 20%" cdk-header-cell *cdkHeaderCellDef> title Input </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.titleInput}} </td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="description">
+    <th cdk-header-cell *cdkHeaderCellDef> description </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>
