@@ -1,17 +1,18 @@
-.cdk-cell {
-  border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
-  border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
-  border-bottom-style: solid;
-  letter-spacing: var(--mat-table-header-headline-tracking);
-  font-weight: inherit;
-  line-height: inherit;
-}
 table {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px -3px #0003,0 8px 10px 1px #00000024,0 3px 14px 2px #0000001f;
+  margin-top: 30px;
+  border: 0;
 }
 table td {
   text-align: center;
+  padding: 10px;
 }
 table th {
   text-transform: capitalize;
+  padding: 10px;
+}
+table tr:hover {
+  background-color: #ffa8a8;
 }
