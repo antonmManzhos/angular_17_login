@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ITodoItemViewModel} from "../../../models/ItodoItemViewModel";
 import {ToDoService} from "../../../services/to-do.service";
 import {CdkTableModule} from "@angular/cdk/table";
@@ -15,26 +15,26 @@ import {BehaviorSubject} from "rxjs";
   styleUrl: './to-do-derive-table.component.css'
 })
 export class ToDoDeriveTableComponent {
-  displayedColumns: string[] = ['dateTodoList','titleInput', 'description', 'delete'];
-  public toDoArray: BehaviorSubject<ITodoItemViewModel[]>|undefined;
+  displayedColumns: string[] = ['dateTodoList', 'titleInput', 'description', 'delete'];
+  public toDoArray: BehaviorSubject<ITodoItemViewModel[]> | undefined;
 
-    constructor(private toDoService: ToDoService, public dialog: MatDialog) {
-      this.toDoArray = toDoService.todoList;
+  constructor(private toDoService: ToDoService, public dialog: MatDialog) {
+    this.toDoArray = toDoService.todoList;
+  }
+
+  public editRow(element: ITodoItemViewModel) {
+    if (!element) {
+      return;
     }
-
-    public editRow(element: ITodoItemViewModel) {
-      if(!element) {
-        return;
+    this.dialog.open(ToDoDialogComponent, {
+      width: '750px',
+      enterAnimationDuration: '3000ms',
+      exitAnimationDuration: '1500ms',
+      data: {
+        description: element.description,
+        titleInput: element.titleInput,
+        dateTodoList: element.dateTodoList
       }
-      this.dialog.open(ToDoDialogComponent, {
-        width: '750px',
-        enterAnimationDuration: '3000ms',
-        exitAnimationDuration: '1500ms',
-        data: {
-          description: element.description,
-          titleInput: element.titleInput,
-          dateTodoList: element.dateTodoList
-        }
-      });
-    }
+    });
+  }
 }
